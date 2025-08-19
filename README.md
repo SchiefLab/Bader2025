@@ -1,4 +1,12 @@
-# OAS Paired Antibody Sequence Processing Pipeline.
+<div class="flex-container" align="center">
+    <a href="https://doi.org/10.5281/zenodo.">
+    <img src="https://zenodo.org/badge/DOI/10.5281/zenodo..svg"
+        alt="zenodo link"></a>
+</div>
+
+**Bader2025**
+
+This is the public code and data repository for Bader et al. 2025.
 
 ## Abstract
 
