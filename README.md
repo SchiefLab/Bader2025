@@ -16,7 +16,6 @@ This pipeline processes paired heavy and light chain antibody sequences from the
 
 ```
 OAS/
-├── run-sadie.ipynb          # Main processing notebook
 ├── data/
 │   ├── OAS_paired/            # OAS paired sequence CSV files
 │   │   ├── ERR4082227_paired.csv
@@ -40,6 +39,7 @@ OAS/
 │       ├── D326651.parquet
 │       └── ...
 └── README.md
+└── run-sadie.ipynb          # Main processing notebook
 ```
 
 ### Processing Pipeline Diagram
