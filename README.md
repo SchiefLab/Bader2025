@@ -8,15 +8,15 @@
 
 This is the public code and data repository for Bader et al. 2025.
 
-## Abstract
+### Abstract
 
 This pipeline processes paired heavy and light chain antibody sequences from the Observed Antibody Space (OAS) database, DeKosky and Leuko datasets. The sequences are annotated using [SADIE's](https://github.com/jwillis0720/sadie) IgBLAST integration and saved as Parquet files with complete AIRR-compliant annotations and metadata for downstream analysis.
 
-## Directory Structure
+### Directory Structure
 
 ```
 OAS/
-├── rerun-sadie.ipynb          # Main processing notebook
+├── run-sadie.ipynb          # Main processing notebook
 ├── data/
 │   ├── OAS_paired/            # OAS paired sequence CSV files
 │   │   ├── ERR4082227_paired.csv
@@ -42,7 +42,7 @@ OAS/
 └── README.md
 ```
 
-## Processing Pipeline Diagram
+### Processing Pipeline Diagram
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -102,40 +102,40 @@ OAS/
 └──────────────────────────────────────────────────────────────┘
 ```
 
-## Data Sources
+### Data Sources
 
-### 1. OAS Database
+#### 1. OAS Database
 - **Location**: `data/OAS_paired/`
 - **Format**: CSV files with paired heavy/light sequences
 - **Species**: Human antibody sequences
 - **Manifest**: `data/oas_manifest.csv` contains metadata for each dataset
 
-### 2. DeKosky Dataset
+#### 2. DeKosky Dataset
 - **Location**: `data/DeKosky_paired/`
 - **Format**: CSV files with custom column structure
 - **Cell Type**: Naive B-cells from PBMC
 - **Special Processing**: Requires column renaming due to duplicate headers
 
-### 3. Leuko Dataset
+#### 3. Leuko Dataset
 - **Location**: `data/D326651_Leuko_human_naive.csv`
 - **Cell Type**: Naive B-cells from PBMC
 - **Author**: Jonathan Hurtado
 
-## Processing Pipeline
+### Processing Pipeline
 
-### Step 1: Data Loading and Preparation
+#### Step 1: Data Loading and Preparation
 1. **Read CSV files** with appropriate headers (some files have JSON headers requiring special handling)
 2. **Standardize column names**:
    - Map to `sequence_id_heavy`, `sequence_id_light`, `sequence_heavy`, `sequence_light`
    - Handle duplicate column names in DeKosky data
 
-### Step 2: FASTA Generation
+#### Step 2: FASTA Generation
 1. **Create FASTA files** for heavy and light chains separately:
    - Heavy chains saved to `data/fasta-heavy/`
    - Light chains saved to `data/fasta-light/`
 2. **Use BioPython** to properly format sequences with IDs
 
-### Step 3: AIRR Annotation with SADIE
+#### Step 3: AIRR Annotation with SADIE
 1. **Run IgBLAST** via SADIE's Airr API on each FASTA file
 2. **Generate AIRR-compliant annotations** including:
    - V(D)J gene assignments
@@ -143,7 +143,7 @@ OAS/
    - Framework regions
    - Junction analysis
 
-### Step 4: Paired Data Merging
+#### Step 4: Paired Data Merging
 1. **Match heavy and light chains** using sequence IDs
 2. **Merge annotations** with suffixes `_heavy` and `_light`
 3. **Add metadata** from manifest:
@@ -155,12 +155,12 @@ OAS/
    - Disease status
    - Other experimental metadata
 
-### Step 5: Output Generation
+#### Step 5: Output Generation
 1. **Save as Parquet files** in `data/parquet-paired/`
 2. **File naming**: Uses run ID or dataset identifier
 3. **Format**: Apache Parquet for efficient storage and querying
 
-## Output Structure
+### Output Structure
 
 Each Parquet file contains:
 - **Sequence data**: Original nucleotide sequences for heavy and light chains
@@ -168,33 +168,33 @@ Each Parquet file contains:
 - **Metadata**: Experimental and sample information
 - **Pairing information**: Maintained heavy-light chain relationships
 
-## Technical Details
+### Technical Details
 
-### Dependencies
+#### Dependencies
 - pandas
 - BioPython (Bio.Seq, Bio.SeqRecord, Bio.SeqIO)
 - SADIE (for AIRR annotation via IgBLAST)
 
-### Performance
+#### Performance
 - Processing time varies by dataset size
 - Example: SRR datasets process in ~20-30 seconds each
 - DeKosky datasets: ~4.5 minutes for complete processing
 
-### Error Handling
+#### Error Handling
 - Checks for existing files to avoid overwriting
 - Handles mixed data types in columns
 - Manages memory by deleting dataframes after processing
 
-## Usage Example
+### Usage Example
 
-To rerun the pipeline:
+To run the pipeline:
 
 1. Ensure all dependencies are installed
 2. Place raw data in appropriate directories
 3. Run the notebook cells sequentially
 4. Output will be generated in `data/parquet-paired/`
 
-### Example Processing Flow
+#### Example Processing Flow
 
 ```python
 # Process a single OAS file
@@ -214,7 +214,7 @@ paired_df = pd.merge(heavy_df, light_df, on='tmp_id', suffixes=('_heavy', '_ligh
 paired_df.to_parquet(f'data/parquet-paired/{filename}.parquet')
 ```
 
-## Output Example
+### Output Example
 
 Each Parquet file contains ~100+ columns including:
 
@@ -248,7 +248,7 @@ Metadata:
 - file_name
 ```
 
-## Manifest Generation
+### Manifest Generation
 
 A tailored manifest (`data/oas_manifest_human_paired.csv`) is created containing:
 
