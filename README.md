@@ -1,10 +1,10 @@
 <div class="flex-container" align="center">
-    <a href="https://doi.org/10.5281/zenodo.">
-    <img src="https://zenodo.org/badge/DOI/10.5281/zenodo..svg"
+    <a href="https://doi.org/10.5281/zenodo.16915002">
+    <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.16915002.svg"
         alt="zenodo link"></a>
 </div>
 
-**Bader2025**
+## **Bader2025**
 
 This is the public code and data repository for Bader et al. 2025.
 
@@ -14,32 +14,33 @@ This pipeline processes paired heavy and light chain antibody sequences from the
 
 This database contains paired BCR sequences with the primary objective of determining the frequency of specific heavy and light chain gene pairings in the human antibody repertoire, and ultimately calculating putative frequencies of naive B cells with unique immunogenetic signatures through bioinformatic analysis. Beyond this core function, the database serves multiple research applications. For example, Bader et al. 2025 utilized this BCR dataset to identify IGHV1-46/IGKV3-20-paired BCRs and select representative HCDR3 loops that capture the natural HCDR3 diversity observed in human antibody repertoires for this specific heavy/light chain gene pairing.
 
+This database contains paired BCR sequences with the primary objective of determining the frequency of specific heavy and light chain gene pairings in the human antibody repertoire, and ultimately calculating putative frequencies of naive B cells with unique immunogenetic signatures through bioinformatic analysis. Beyond this core function, the database serves multiple research applications. For example, Bader et al. 2025 utilized this BCR dataset to identify IGHV1-46/IGKV3-20-paired BCRs and select representative HCDR3 loops that capture the natural HCDR3 diversity observed in human antibody repertoires for a specific heavy/light chain pair.
+
 ### Directory Structure
 
 ```
-OAS/
-├── data/
-│   ├── OAS_paired/            # OAS paired sequence CSV files
-│   │   ├── ERR4082227_paired.csv
-│   │   ├── ERR4082235_paired.csv
-│   │   └── ...
-│   ├── DeKosky_paired/        # DeKosky dataset CSV files
-│   │   ├── SRR1585248_joined_NoAlleles.csv
-│   │   ├── SRR1585265_joined_NoAlleles.csv
-│   │   └── ...
-│   ├── D326651_Leuko_human_naive.csv  # Leuko dataset
-│   ├── oas_manifest.csv       # OAS metadata manifest
-│   ├── fasta-heavy/           # Generated heavy chain FASTA files
-│   │   ├── ERR4082227.fasta
-│   │   └── ...
-│   ├── fasta-light/           # Generated light chain FASTA files
-│   │   ├── ERR4082227.fasta
-│   │   └── ...
-│   └── parquet-paired/        # Final output Parquet files
-│       ├── ERR4082227.parquet
-│       ├── SRR1585248.parquet
-│       ├── D326651.parquet
-│       └── ...
+data/
+├── OAS_paired/            # OAS paired sequence CSV files
+│   ├── ERR4082227_paired.csv
+│   ├── ERR4082235_paired.csv
+│   └── ...
+├── DeKosky_paired/        # DeKosky dataset CSV files
+│   ├── SRR1585248_joined_NoAlleles.csv
+│   ├── SRR1585265_joined_NoAlleles.csv
+│   └── ...
+├── D326651_Leuko_human_naive.csv  # Leuko dataset
+├── oas_manifest.csv       # OAS metadata manifest
+├── fasta-heavy/           # Generated heavy chain FASTA files
+│   ├── ERR4082227.fasta
+│   └── ...
+├── fasta-light/           # Generated light chain FASTA files
+│   ├── ERR4082227.fasta
+│   └── ...
+├── parquet-paired/        # Final output Parquet files
+│   ├── ERR4082227.parquet
+│   ├── SRR1585248.parquet
+│   ├── SRR1585265.parquet
+│   └── ...
 └── README.md
 └── run-sadie.ipynb          # Main processing notebook
 ```
