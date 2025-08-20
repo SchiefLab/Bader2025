@@ -4,7 +4,7 @@
         alt="zenodo link"></a>
 </div>
 
-**Bader2025**
+## **Bader2025**
 
 This is the public code and data repository for Bader et al. 2025.
 
@@ -15,29 +15,28 @@ This pipeline processes paired heavy and light chain antibody sequences from the
 ### Directory Structure
 
 ```
-OAS/
-├── data/
-│   ├── OAS_paired/            # OAS paired sequence CSV files
-│   │   ├── ERR4082227_paired.csv
-│   │   ├── ERR4082235_paired.csv
-│   │   └── ...
-│   ├── DeKosky_paired/        # DeKosky dataset CSV files
-│   │   ├── SRR1585248_joined_NoAlleles.csv
-│   │   ├── SRR1585265_joined_NoAlleles.csv
-│   │   └── ...
-│   ├── D326651_Leuko_human_naive.csv  # Leuko dataset
-│   ├── oas_manifest.csv       # OAS metadata manifest
-│   ├── fasta-heavy/           # Generated heavy chain FASTA files
-│   │   ├── ERR4082227.fasta
-│   │   └── ...
-│   ├── fasta-light/           # Generated light chain FASTA files
-│   │   ├── ERR4082227.fasta
-│   │   └── ...
-│   └── parquet-paired/        # Final output Parquet files
-│       ├── ERR4082227.parquet
-│       ├── SRR1585248.parquet
-│       ├── D326651.parquet
-│       └── ...
+data/
+├── OAS_paired/            # OAS paired sequence CSV files
+│   ├── ERR4082227_paired.csv
+│   ├── ERR4082235_paired.csv
+│   └── ...
+├── DeKosky_paired/        # DeKosky dataset CSV files
+│   ├── SRR1585248_joined_NoAlleles.csv
+│   ├── SRR1585265_joined_NoAlleles.csv
+│   └── ...
+├── D326651_Leuko_human_naive.csv  # Leuko dataset
+├── oas_manifest.csv       # OAS metadata manifest
+├── fasta-heavy/           # Generated heavy chain FASTA files
+│   ├── ERR4082227.fasta
+│   └── ...
+├── fasta-light/           # Generated light chain FASTA files
+│   ├── ERR4082227.fasta
+│   └── ...
+├── parquet-paired/        # Final output Parquet files
+│   ├── ERR4082227.parquet
+│   ├── SRR1585248.parquet
+│   ├── SRR1585265.parquet
+│   └── ...
 └── README.md
 └── run-sadie.ipynb          # Main processing notebook
 ```
