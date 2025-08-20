@@ -14,8 +14,6 @@ This pipeline processes paired heavy and light chain antibody sequences from the
 
 This database contains paired BCR sequences with the primary objective of determining the frequency of specific heavy and light chain gene pairings in the human antibody repertoire, and ultimately calculating putative frequencies of naive B cells with unique immunogenetic signatures through bioinformatic analysis. Beyond this core function, the database serves multiple research applications. For example, Bader et al. 2025 utilized this BCR dataset to identify IGHV1-46/IGKV3-20-paired BCRs and select representative HCDR3 loops that capture the natural HCDR3 diversity observed in human antibody repertoires for this specific heavy/light chain gene pairing.
 
-This database contains paired BCR sequences with the primary objective of determining the frequency of specific heavy and light chain gene pairings in the human antibody repertoire, and ultimately calculating putative frequencies of naive B cells with unique immunogenetic signatures through bioinformatic analysis. Beyond this core function, the database serves multiple research applications. For example, Bader et al. 2025 utilized this BCR dataset to identify IGHV1-46/IGKV3-20-paired BCRs and select representative HCDR3 loops that capture the natural HCDR3 diversity observed in human antibody repertoires for a specific heavy/light chain pair.
-
 ### Directory Structure
 
 ```
