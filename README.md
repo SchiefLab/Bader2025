@@ -8,7 +8,7 @@
 
 This is the public code and data repository for Bader et al. 2025.
 
-## Purposes
+### Purposes
 1) Assembled a paired BCR sequence database based on PBMC samples from healthy, unvaccinated subjects amounting to a total of 531,080 paired BCR sequences of which 457,346 are from naïve B cells.
 2) R-script used to process affinity measurement data acquired by SPR.
 
