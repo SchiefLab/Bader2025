@@ -8,11 +8,17 @@
 
 This is the public code and data repository for Bader et al. 2025.
 
+## Purposes
+1) Assembled a paired BCR sequence database based on PBMC samples from healthy, unvaccinated subjects amounting to a total of 531,080 paired BCR sequences of which 457,346 are from naïve B cells.
+2) R-script used to process affinity measurement data acquired by SPR.
+
 ### Abstract
 
 This pipeline processes paired heavy and light chain antibody sequences from the Observed Antibody Space (OAS) database, DeKosky and Leuko datasets. The sequences are annotated using [SADIE's](https://github.com/jwillis0720/sadie) IgBLAST integration and saved as Parquet files with complete AIRR-compliant annotations and metadata for downstream analysis. 
 
 This database contains paired BCR sequences with the primary objective of determining the frequency of specific heavy and light chain gene pairings in the human antibody repertoire, and ultimately calculating putative frequencies of naive B cells with unique immunogenetic signatures through bioinformatic analysis. Beyond this core function, the database serves multiple research applications. For example, Bader et al. 2025 utilized this BCR dataset to identify IGHV1-46/IGKV3-20-paired BCRs and select representative HCDR3 loops that capture the natural HCDR3 diversity observed in human antibody repertoires for this specific heavy/light chain gene pairing.
+
+Repository also contains the R-script used to automatically process the affinity measurement data acquired by Surface Plasma Resonance (SPR) on a Carterra LSR instrument. 
 
 ### Directory Structure
 
